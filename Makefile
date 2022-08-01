@@ -1,11 +1,21 @@
 make say-hello:
 	echo "Hello, World!"
 
-make setup:
-	install build
+setup: install build
 
-make test:
+install:
+	npm install
+
+build:
+	npm run build
+
+start:
+	npm start
+
+test:
 	npm test
 
-make lint:
+lint:
 	npx eslint .
+
+.PHONY: build
